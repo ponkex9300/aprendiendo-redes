@@ -25,4 +25,25 @@ router.post('/login', async (req, res) => {
   res.json({ token, user: { id: user.id, email: user.email, name: user.name, role: user.role } });
 });
 
+const authMiddleware = async (req, res, next) => {
+  try {
+    const auth = req.headers.authorization;
+    if (!auth) return res.status(401).json({ error: 'No token' });
+    const token = auth.split(' ')[1];
+    const jwt = require('jsonwebtoken');
+    const payload = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = payload;
+    next();
+  } catch (err) {
+    return res.status(401).json({ error: 'Invalid token' });
+  }
+};
+
+router.get('/profile', authMiddleware, async (req, res) => {
+  const { User } = require('../models');
+  const u = await User.findByPk(req.user.id, { attributes: ['id','email','name','role'] });
+  if (!u) return res.status(404).json({ error: 'Not found' });
+  res.json({ id: u.id, email: u.email, name: u.name, role: u.role });
+});
+
 module.exports = router;

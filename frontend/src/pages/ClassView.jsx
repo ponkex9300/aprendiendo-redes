@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
+import { storage } from '../utils/storage';
 
 export default function ClassView(){
   const { id } = useParams();
   const [modules, setModules] = useState([]);
-  const token = localStorage.getItem('token');
+  const token = storage.getToken();
 
   useEffect(()=> {
     async function load(){

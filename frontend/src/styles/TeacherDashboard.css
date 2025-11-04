@@ -1,0 +1,467 @@
+/* Teacher Dashboard Styles */
+.teacher-dashboard {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.dashboard-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.dashboard-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.5rem;
+}
+
+.dashboard-header p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 1.1rem;
+}
+
+.dashboard-tabs {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard-tabs button {
+  padding: 1rem 2rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.dashboard-tabs button:hover {
+  color: #667eea;
+  background-color: #f8f9fa;
+}
+
+.dashboard-tabs button.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+  background-color: #f8f9fa;
+}
+
+.dashboard-content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.tab-content {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.tab-content h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 0.5rem;
+}
+
+.form-section {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.form-section h3,
+.form-section h4 {
+  margin-top: 0;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-section input,
+.form-section textarea,
+.form-section select {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-section input:focus,
+.form-section textarea:focus,
+.form-section select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-primary {
+  background-color: #667eea;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #5568d3;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.list-section {
+  margin-top: 2rem;
+}
+
+.list-section h3 {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card h4 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1.25rem;
+}
+
+.card p {
+  color: #666;
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.btn-edit,
+.btn-delete,
+.btn-view {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-edit {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.btn-edit:hover {
+  background-color: #ffb300;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+.btn-view {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-view:hover {
+  background-color: #218838;
+}
+
+.info-message {
+  background-color: #e7f3ff;
+  border-left: 4px solid #2196F3;
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+.info-message p {
+  margin: 0;
+  color: #0d47a1;
+}
+
+.class-info {
+  background-color: #e8f5e9;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.class-info h3 {
+  margin: 0;
+  color: #2e7d32;
+}
+
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.students-table thead {
+  background-color: #f8f9fa;
+}
+
+.students-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.students-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.students-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.btn-delete-small {
+  background-color: #dc3545;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-delete-small:hover {
+  background-color: #c82333;
+}
+
+.modules-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e0e0e0;
+}
+
+.modules-section h3 {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.modules-list {
+  margin-top: 1rem;
+}
+
+.modules-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modules-list li {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modules-list li:hover {
+  background-color: #e9ecef;
+  transform: translateX(5px);
+}
+
+.modules-list li.module-selected {
+  background-color: #d4e7ff;
+  border-left: 4px solid #667eea;
+}
+
+.module-order {
+  background-color: #667eea;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.module-title {
+  font-weight: 500;
+  color: #333;
+  flex-grow: 1;
+}
+
+.module-badge {
+  background-color: #667eea;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.videos-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #e0e0e0;
+}
+
+.videos-section h3 {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.file-info {
+  background-color: #e3f2fd;
+  padding: 0.75rem;
+  border-radius: 4px;
+  color: #1976d2;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.upload-progress {
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  overflow: hidden;
+  height: 30px;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  transition: width 0.3s ease;
+}
+
+.btn-primary:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: #667eea;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .dashboard-tabs {
+    overflow-x: auto;
+  }
+  
+  .dashboard-tabs button {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .items-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .class-info {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .students-table {
+    font-size: 0.875rem;
+  }
+  
+  .students-table th,
+  .students-table td {
+    padding: 0.5rem;
+  }
+}

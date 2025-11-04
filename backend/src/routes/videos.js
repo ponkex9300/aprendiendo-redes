@@ -8,6 +8,7 @@ const { authMiddleware, role } = require('../middlewares/auth');
 router.post('/presign', authMiddleware, role(['teacher']), async (req, res) => {
   const { filename, contentType, classId, moduleId, videoOrder, title, duration } = req.body;
   if (!filename || !contentType || !moduleId) return res.status(400).json({ error: 'Missing fields' });
+  if (!duration || duration <= 0) return res.status(400).json({ error: 'La duración del video es requerida' });
   const key = `classes/${classId || 'noclass'}/modules/${moduleId}/${Date.now()}_${filename}`;
   const uploadUrl = await getPresignedPutUrl(key, contentType, 600);
   const video = await Video.create({
@@ -15,7 +16,7 @@ router.post('/presign', authMiddleware, role(['teacher']), async (req, res) => {
     title: title || filename,
     s3_key: key,
     video_order: videoOrder || 0,
-    duration_seconds: duration || 5,
+    duration_seconds: Math.round(duration),
     status: 'pending'
   });
   res.json({ uploadUrl, s3Key: key, videoId: video.id });

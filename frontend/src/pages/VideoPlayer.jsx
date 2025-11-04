@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { getUrl } from '../api/videos';
+import { getVideoUrl } from '../api/videos';
 import { watch } from '../api/progress';
+import { storage } from '../utils/storage';
 
 export default function VideoPlayer(){
   const { id } = useParams();
   const [url,setUrl] = useState(null);
   const [showFinal,setShowFinal] = useState(false);
-  const token = localStorage.getItem('token');
+  const token = storage.getToken();
   const nav = useNavigate();
 
   useEffect(()=> {
     async function load(){
-      const r = await getUrl(id, token);
+      const r = await getVideoUrl(token, id);
       setUrl(r.url);
     }
     load();
